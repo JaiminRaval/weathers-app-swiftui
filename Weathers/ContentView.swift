@@ -8,27 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isNight: Bool = false
+    
     var body: some View {
         ZStack{
-            BackgroundView(colorArray: [.blue, Color("Lightblue")])
+            BackgroundView(isNight: $isNight)
             
             VStack{
-                Text(K.CityName)
-                    .font(.system(size: 32, weight: .medium))
-                    .foregroundStyle(.white)
-                    .padding()
+                CityNameView(cityName: K.CityName)
                 
-                VStack(spacing: 8){
-                    Image(systemName: K.cloudIcon)
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 180, height: 180)
-                    Text("76°")
-                        .font(.system(size: 70, weight: .medium))
-                        .foregroundStyle(.white)
-                }
-                .padding(.bottom, 40)
+                CurrentWeatherView(imageName: isNight ? "moon.stars.fill" : K.cloudIcon)
                 
                 HStack(spacing:20){
                     DayWeatherView(currDay: "Tue",
@@ -49,8 +39,12 @@ struct ContentView: View {
                 }
                 
                 Spacer()
-                
-                DayTimeButton()
+                Button {
+                    isNight.toggle()
+                }label: {
+                    DayTimeButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+
+                }
                 
                 Spacer()
 
@@ -91,12 +85,45 @@ struct DayWeatherView: View {
 
 struct BackgroundView: View {
     
-    var colorArray: [Color]
+    @Binding var isNight: Bool
 
     var body: some View {
-        LinearGradient(colors: colorArray,
+        LinearGradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("Lightblue")],
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .ignoresSafeArea()
     }
 }
+
+struct CityNameView: View {
+    
+    var cityName: String
+
+    var body: some View {
+        Text(cityName)
+            .font(.system(size: 32, weight: .medium))
+            .foregroundStyle(.white)
+            .padding()
+    }
+}
+
+struct CurrentWeatherView: View {
+    
+    var imageName: String
+    
+    var body: some View {
+        VStack(spacing: 8){
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180, height: 180)
+            Text("76°")
+                .font(.system(size: 70, weight: .medium))
+                .foregroundStyle(.white)
+        }
+        .padding(.bottom, 40)
+    }
+}
+
+

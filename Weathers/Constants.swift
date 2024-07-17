@@ -15,4 +15,7 @@ struct K {
     static var sunIcon = "sun.max.fill"
     static var windIcon = "wind.snow"
     
+    
+    static var apiKey = "2783024ffb0fd1fe8eac410e0e7a4b77"
+    
 }

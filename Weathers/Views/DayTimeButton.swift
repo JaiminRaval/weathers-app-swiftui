@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct DayTimeButton: View {
+    var title: String
+    var textColor: Color
+    var backgroundColor: Color
+    
     var body: some View {
-        Button{
-            debugPrint("change button tapped")
-            
-        }label: {
-            Text("Change Day Time")
+            Text(title)
                 .font(.system(size: 20, weight: .bold))
                 .frame(width: 280, height: 50)
-                .background(.white)
+                .background(backgroundColor)
+                .foregroundStyle(textColor)
                 .cornerRadius(12)
-        }    }
+            }
 }
 
 #Preview {
-    DayTimeButton()
+    DayTimeButton(title: "Change Day Time", textColor: .white, backgroundColor: .blue)
 }

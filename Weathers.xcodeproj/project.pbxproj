@@ -13,6 +13,8 @@
 		0738CA672C467A0900F670CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738CA662C467A0900F670CA /* Preview Assets.xcassets */; };
 		0738CA6E2C467F5000F670CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738CA6D2C467F5000F670CA /* Constants.swift */; };
 		0738CA702C46AA0E00F670CA /* DayTimeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738CA6F2C46AA0E00F670CA /* DayTimeButton.swift */; };
+		076921F32C480CA300F0B324 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076921F22C480CA300F0B324 /* ApiManager.swift */; };
+		076921F82C480CE800F0B324 /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076921F72C480CE800F0B324 /* DayWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		0738CA662C467A0900F670CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0738CA6D2C467F5000F670CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0738CA6F2C46AA0E00F670CA /* DayTimeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimeButton.swift; sourceTree = "<group>"; };
+		076921F22C480CA300F0B324 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		076921F72C480CE800F0B324 /* DayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,14 @@
 		0738CA5E2C467A0700F670CA /* Weathers */ = {
 			isa = PBXGroup;
 			children = (
+				076921F62C480CCE00F0B324 /* Models */,
+				076921F52C480CB200F0B324 /* Views */,
+				076921F42C480CA900F0B324 /* Services */,
 				0738CA6D2C467F5000F670CA /* Constants.swift */,
 				0738CA5F2C467A0700F670CA /* WeathersApp.swift */,
 				0738CA612C467A0700F670CA /* ContentView.swift */,
 				0738CA632C467A0900F670CA /* Assets.xcassets */,
 				0738CA652C467A0900F670CA /* Preview Content */,
-				0738CA6F2C46AA0E00F670CA /* DayTimeButton.swift */,
 			);
 			path = Weathers;
 			sourceTree = "<group>";
@@ -71,6 +77,30 @@
 				0738CA662C467A0900F670CA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		076921F42C480CA900F0B324 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				076921F22C480CA300F0B324 /* ApiManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		076921F52C480CB200F0B324 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0738CA6F2C46AA0E00F670CA /* DayTimeButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		076921F62C480CCE00F0B324 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				076921F72C480CE800F0B324 /* DayWeather.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0738CA622C467A0700F670CA /* ContentView.swift in Sources */,
+				076921F82C480CE800F0B324 /* DayWeather.swift in Sources */,
 				0738CA602C467A0700F670CA /* WeathersApp.swift in Sources */,
+				076921F32C480CA300F0B324 /* ApiManager.swift in Sources */,
 				0738CA6E2C467F5000F670CA /* Constants.swift in Sources */,
 				0738CA702C46AA0E00F670CA /* DayTimeButton.swift in Sources */,
 			);
