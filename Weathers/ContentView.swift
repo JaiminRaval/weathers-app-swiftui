@@ -50,6 +50,12 @@ struct ContentView: View {
 
             }
             
+        }.onAppear{
+            let btn = DayTimeButton(
+                title: "Change Day Time",
+                textColor: .blue,
+                backgroundColor: .white)
+            print(type(of: btn.body))
         }
     }
 }

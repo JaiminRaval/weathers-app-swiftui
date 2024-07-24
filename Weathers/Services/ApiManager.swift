@@ -11,10 +11,17 @@ class ApiManager {
     
     private let apiKey = K.apiKey
     private let apiUrl = "http://api.openweathermap.org/data/2.5"
-//    func fetchCurrWeather(city: String, lat: Double, long: Double, completion: @escaping <DayWeather,Error>) {
-//        var parameter = "/weather"
-//        
-//    }
+    
+    
+    func fetchCurrWeather(
+        city: String,
+        lat: Double,
+        long: Double,
+        completion: @escaping () -> (Result<DayWeather, Error>)) {
+        var parameter = "/weather"
+    
+        
+    }
 }
 
 
